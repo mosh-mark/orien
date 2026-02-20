@@ -1130,50 +1130,86 @@ footer.footer {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   SLIDE NAVIGATION DOTS
+   SLIDE NAVIGATION — dots + progress bar
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .slide-nav {
   position: fixed;
-  right: 1rem;
+  right: 1.1rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
   z-index: 1000;
   pointer-events: auto;
+  padding: 0 2px;
 }
 
+/* ── グレーのトラックライン（全体） */
+.slide-nav::before {
+  content: '';
+  position: absolute;
+  top: 3.5px;    /* 最初のドットの中心 */
+  bottom: 3.5px; /* 最後のドットの中心 */
+  left: 50%;
+  width: 1.5px;
+  background: rgba(120, 120, 120, 0.2);
+  transform: translateX(-50%);
+  pointer-events: none;
+  border-radius: 1px;
+}
+
+/* ── 進捗フィルライン（JS で height を更新） */
+.slide-progress-fill {
+  position: absolute;
+  top: 3.5px;
+  left: 50%;
+  width: 2px;
+  height: 0%;
+  background: var(--c800);
+  transform: translateX(-50%);
+  transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 1px 1px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── ドット */
 .slide-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(100, 100, 100, 0.3);
-  border: 1.5px solid rgba(100, 100, 100, 0.5);
+  background: rgba(120, 120, 120, 0.25);
+  border: 1.5px solid rgba(120, 120, 120, 0.4);
   cursor: pointer;
   padding: 0;
   transition: all 0.25s ease;
   flex-shrink: 0;
+  position: relative; /* トラックラインより前面 */
+  z-index: 1;
 }
 
 .slide-dot:hover {
-  background: rgba(100, 100, 100, 0.6);
+  background: rgba(80, 80, 80, 0.5);
+  border-color: rgba(80, 80, 80, 0.7);
 }
 
+/* 通過済みのドット */
+.slide-dot--passed {
+  background: var(--c600);
+  border-color: var(--c600);
+}
+
+/* 現在のドット */
 .slide-dot--active {
-  background: var(--c800);
-  border-color: var(--c800);
-  transform: scale(1.5);
+  background: var(--c900);
+  border-color: var(--c900);
+  transform: scale(1.6);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.6);
 }
 
-/* セクション--dark上ではドットを白に */
-.section--dark ~ .slide-nav .slide-dot,
-.hero ~ .slide-nav .slide-dot {
-  border-color: rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.3);
-}
-
-/* スライド番号インジケーター */
+/* ── スライド番号インジケーター */
 .slide-counter {
   position: fixed;
   bottom: 1rem;

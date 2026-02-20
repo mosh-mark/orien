@@ -71,12 +71,20 @@ document.addEventListener('touchend', e => {
   if (Math.abs(delta) > 50) go(nearest() + (delta > 0 ? 1 : -1));
 }, { passive: true });
 
-// ── ドットナビゲーション（生成）──
+// ── ドットナビゲーション＋進捗バー（生成）──
+let fillEl = null;
+
 function buildNav() {
   const nav = document.createElement('nav');
   nav.className = 'slide-nav';
   nav.setAttribute('aria-label', 'スライドナビゲーション');
 
+  // 進捗フィルライン
+  fillEl = document.createElement('div');
+  fillEl.className = 'slide-progress-fill';
+  nav.appendChild(fillEl);
+
+  // ドット
   slides.forEach((_, i) => {
     const btn = document.createElement('button');
     btn.className = 'slide-dot' + (i === 0 ? ' slide-dot--active' : '');
@@ -98,9 +106,20 @@ function buildCounter() {
   document.body.appendChild(counterEl);
 }
 
+// ── ドット状態 ＋ 進捗バー更新 ──
 function updateDots() {
-  document.querySelectorAll('.slide-dot').forEach((d, i) =>
-    d.classList.toggle('slide-dot--active', i === current));
+  const dotEls = document.querySelectorAll('.slide-dot');
+
+  dotEls.forEach((d, i) => {
+    d.classList.toggle('slide-dot--active', i === current);
+    d.classList.toggle('slide-dot--passed',  i < current);
+  });
+
+  // 進捗バーの高さ：最初〜最後のドット中心間を current/total-1 で埋める
+  if (fillEl && slides.length > 1) {
+    const pct = (current / (slides.length - 1)) * 100;
+    fillEl.style.height = `calc(${pct}% - 0px)`;
+  }
 }
 
 function updateCounter() {
