@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOSH はじめの一歩ガイド｜活用説明会</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO — スライド 1
+══════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero__inner">
+    <div class="hero__left">
+      <p class="hero__label">MOSH活用説明会</p>
+      <h1 class="hero__title">MOSH</h1>
+      <h2 class="hero__subtitle">はじめの一歩ガイド</h2>
+      <p class="hero__caption">〜 MOSHでできることを、一緒に確認しましょう 〜</p>
+    </div>
+    <div class="hero__goal">
+      <p class="hero__goal-label">今日のゴール</p>
+      <p class="hero__goal-text">MOSHの全体像を掴み、<br>自分への活用イメージが<br>具体的に描けている！</p>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     今日のゴール — スライド 2
+══════════════════════════════════════════ -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag tag--dark">今日のゴール</span>
+    <h2 class="section-title">説明会が終わるころには…</h2>
+
+    <div class="goal-row"><span class="badge">1</span><span>MOSHがどんなサービスかわかる</span></div>
+    <div class="goal-row"><span class="badge">2</span><span>紹介ページ（LP）の作り方のイメージがつく</span></div>
+    <div class="goal-row"><span class="badge">3</span><span>決済設定の流れがわかる</span></div>
+    <div class="goal-row"><span class="badge">4</span><span>申込者向けサイト（会員サイト）で購入者を管理できるイメージがつく</span></div>
+    <div class="goal-row goal-row--highlight"><span class="badge badge--dark">5</span><span>MOSHが自分のビジネスに合うか、具体的なイメージで判断できている</span></div>
+
+    <div class="note-bar">専門用語は使わず、実際の流れをもとにご説明します</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MOSHってなに？ — スライド 3
+══════════════════════════════════════════ -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag">MOSHってなに？</span>
+    <h2 class="section-title">好きなことを、仕事にするためのプラットフォーム</h2>
+
+    <div class="mosh-layout">
+      <div class="grid-2 flex-1">
+        <div class="wire-box text-center bold">紹介ページ<br>(LP)作成</div>
+        <div class="wire-box text-center bold">決済・<br>お申し込み</div>
+        <div class="wire-box text-center bold">申込者向け<br>サイト管理</div>
+        <div class="wire-box text-center bold">購入者への<br>自動案内</div>
+      </div>
+      <div class="mosh-circle">
+        <span class="mosh-circle__name">MOSH</span>
+        <span class="mosh-circle__sub">ひとつで全部できる</span>
+      </div>
+    </div>
+
+    <div class="note-bar mt-lg">
+      初期費用・月額費用 0円。クリエイター専用の決済・会員管理・サポートが一体化したプラットフォームです
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     実際の利用者 — スライド 4
+══════════════════════════════════════════ -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag">実際の利用者</span>
+    <h2 class="section-title">実際にどんな方が使っているか</h2>
+
+    <div class="grid-2">
+      <div class="wire-box flex-row flex-row--center">
+        <div style="width:36px;height:36px;background:var(--c200);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🍞</div>
+        <div>
+          <p class="bold text-sm">パン教室の先生</p>
+          <p class="text-xs text-muted mt-sm">月3〜5回のレッスンをサブスクで販売<br>月5,000円 × 10名 = 月5万円</p>
+        </div>
+      </div>
+      <div class="wire-box flex-row flex-row--center">
+        <div style="width:36px;height:36px;background:var(--c200);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">💃</div>
+        <div>
+          <p class="bold text-sm">ダンス講師</p>
+          <p class="text-xs text-muted mt-sm">単発レッスン3,000円〜<br>SNSからそのまま申し込みへ</p>
+        </div>
+      </div>
+      <div class="wire-box flex-row flex-row--center">
+        <div style="width:36px;height:36px;background:var(--c200);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🧘</div>
+        <div>
+          <p class="bold text-sm">ヨガインストラクター</p>
+          <p class="text-xs text-muted mt-sm">オンライン動画コンテンツを<br>月額サブスクで提供</p>
+        </div>
+      </div>
+      <div class="wire-box flex-row flex-row--center">
+        <div style="width:36px;height:36px;background:var(--c200);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🎨</div>
+        <div>
+          <p class="bold text-sm">ハンドメイド作家</p>
+          <p class="text-xs text-muted mt-sm">製作技術の講座を単品販売<br>5,000〜10,000円/回</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-muted text-center mt-lg">月数万円規模の販売から始めているクリエイターが多くいます</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     今日の流れ — スライド 5
+══════════════════════════════════════════ -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag tag--dark">今日の流れ</span>
+    <h2 class="section-title">３ステップで、MOSHの主要機能をご紹介します</h2>
+
+    <div class="grid-3">
+      <div class="step-card">
+        <div class="step-card__circle">1</div>
+        <p class="step-card__label">STEP 1</p>
+        <p class="step-card__title">紹介ページの使い方</p>
+        <p class="step-card__icon">📄</p>
+        <p class="step-card__desc">ページビルダーで<br>あなたのサービスを紹介</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__circle">2</div>
+        <p class="step-card__label">STEP 2</p>
+        <p class="step-card__title">決済機能の設定方法</p>
+        <p class="step-card__icon">💳</p>
+        <p class="step-card__desc">サブスク・単品販売の<br>設定と自動案内</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__circle">3</div>
+        <p class="step-card__label">STEP 3</p>
+        <p class="step-card__title">申込者向けサイトの活用法</p>
+        <p class="step-card__icon">📚</p>
+        <p class="step-card__desc">購入者への<br>コンテンツ提供と管理</p>
+      </div>
+    </div>
+
+    <p class="text-center bold mt-lg" style="font-size:.85rem;">このあと1つずつ、一緒に見ていきましょう！</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STEP 1 OPENER — スライド 6
+═══════════════════════════════════════════ -->
+<div class="step-opener">
+  <p class="step-opener__label">STEP 1</p>
+  <div class="step-opener__circle">1</div>
+  <h2 class="step-opener__title">紹介ページの使い方</h2>
+  <p class="step-opener__sub">プロフィールリンクとページビルダーで、サービスの入口を整備します</p>
+</div>
+
+<!-- ── プロフィールリンク — スライド 7 ── -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag">STEP 1：紹介ページ</span>
+    <h2 class="section-title">まずは「プロフィールリンク」でSNSから繋げよう</h2>
+
+    <div class="flex-row">
+      <div class="wire-box flex-1">
+        <p class="bold text-sm mb-sm" style="color:var(--c600);">プロフィールリンクとは？</p>
+        <p style="font-size:.85rem;line-height:1.8;">
+          SNSプロフィール欄に貼るリンク。<br><br>
+          クリックすると…<br>
+          ・あなたのサービス一覧が見られる<br>
+          ・そのまま申し込みもできる<br><br>
+          簡易ホームページのような役割！
+        </p>
+      </div>
+      <div class="phone-mock">
+        <div class="phone-mock__screen">📱</div>
+        <div class="phone-mock__body">
+          <p class="phone-mock__label">【SNS プロフィール】</p>
+          <div class="phone-mock__btn">リンクはこちら → MOSH</div>
+          <p class="phone-mock__arrow">↓ タップ</p>
+          <div class="phone-mock__result">🎉 サービス一覧ページ<br>（申し込みボタン付き）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-bar note-bar--accent mt-lg">SNS → MOSH への導線がワンクリックで完成！</div>
+  </div>
+</section>
+
+<!-- ── ページビルダー — スライド 8 ── -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag">STEP 1：紹介ページ</span>
+    <h2 class="section-title">ページビルダーで、見栄えのよいLPが作れます</h2>
+
+    <div class="grid-3 mb-md">
+      <div class="wire-box text-center">
+        <p style="font-size:1.8rem;margin-bottom:.4rem;">🖱️</p>
+        <p class="bold text-sm mb-sm">マニュアル不要</p>
+        <p class="text-xs text-muted">ドラッグ＆ドロップで<br>直感的に作れる</p>
+      </div>
+      <div class="wire-box text-center">
+        <p style="font-size:1.8rem;margin-bottom:.4rem;">💡</p>
+        <p class="bold text-sm mb-sm">テンプレあり</p>
+        <p class="text-xs text-muted">デザインの知識がなくても<br>プロっぽく仕上がる</p>
+      </div>
+      <div class="wire-box text-center">
+        <p style="font-size:1.8rem;margin-bottom:.4rem;">🔗</p>
+        <p class="bold text-sm mb-sm">決済まで一体</p>
+        <p class="text-xs text-muted">LP→申し込み→決済が<br>すべて1つでつながる</p>
+      </div>
+    </div>
+
+    <div class="wire-box" style="background:var(--c100);">
+      <p class="bold text-sm mb-sm">実際のMOSHでの作成順序</p>
+      <p class="text-xs" style="color:var(--c600);line-height:1.8;">
+        ① サービスを作成　→　② ページビルダーでLPを作成　→　③ サービスをCTAに紐づけ　→　④ SNSでシェア・受付開始
+      </p>
+      <p class="text-xs text-muted text-italic mt-sm">※ページビルダーでLP作成とサービス作成は別ステップです</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEP 1 まとめ — スライド 9 ── -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag tag--dark">STEP 1：まとめ</span>
+    <h2 class="section-title">STEP 1 まとめ</h2>
+
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">SNSプロフィールに「プロフィールリンク」を設定する</span></div>
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">「ページビルダー」でLPを作成し、作成済みサービスをCTAに紐づける</span></div>
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">LP・申し込み・決済がすべてMOSHひとつで完結する</span></div>
+
+    <div class="cta-bar">STEP 2「決済の設定」へ進みます</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STEP 2 OPENER — スライド 10
+═══════════════════════════════════════════ -->
+<div class="step-opener">
+  <p class="step-opener__label">STEP 2</p>
+  <div class="step-opener__circle">2</div>
+  <h2 class="step-opener__title">決済機能の設定方法</h2>
+  <p class="step-opener__sub">サブスク・単品販売、それぞれの設定の流れを確認します</p>
+</div>
+
+<!-- ── 販売スタイル2種類 — スライド 11 ── -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag">STEP 2：決済</span>
+    <h2 class="section-title">販売スタイルは２種類。MOSHで選択するタイプを確認</h2>
+
+    <div class="grid-2">
+      <div class="payment-box">
+        <div class="payment-box__head">単品販売</div>
+        <div class="payment-box__body">
+          <p class="payment-box__item">1回ごとに購入してもらう形</p>
+          <p class="payment-box__item">例：単発レッスン 3,000〜10,000円</p>
+          <p class="payment-box__item">例：動画コンテンツ 5,000円</p>
+        </div>
+        <div class="payment-box__tag">MOSHでの選択タイプ：「コンテンツ・講座」</div>
+      </div>
+      <div class="payment-box">
+        <div class="payment-box__head">サブスク（月額）</div>
+        <div class="payment-box__body">
+          <p class="payment-box__item">毎月自動でお支払いが継続する形</p>
+          <p class="payment-box__item">例：月額コミュニティ 3,000〜5,000円</p>
+          <p class="payment-box__item">例：動画見放題プラン 月2,980円</p>
+        </div>
+        <div class="payment-box__tag">MOSHでの選択タイプ：「サブスクリプション」</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── お支払い方法 — スライド 12 ── -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag">STEP 2：決済</span>
+    <h2 class="section-title">クレジットカード・銀行振込、どちらも対応</h2>
+
+    <div class="grid-3">
+      <div class="wire-box text-center">
+        <div style="width:44px;height:44px;background:var(--c300);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .75rem;">💳</div>
+        <p class="bold text-sm mb-sm">クレジットカード</p>
+        <p class="text-xs text-muted">主要カードすべて対応<br>決済上限 200万円<br>申し込み後すぐに自動案内</p>
+      </div>
+      <div class="wire-box text-center">
+        <div style="width:44px;height:44px;background:var(--c300);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .75rem;">🏦</div>
+        <p class="bold text-sm mb-sm">銀行振込</p>
+        <p class="text-xs text-muted">入金確認も自動！<br>手動確認の手間ゼロ<br>着金後すぐに自動案内</p>
+      </div>
+      <div class="wire-box text-center">
+        <div style="width:44px;height:44px;background:var(--c300);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .75rem;">📅</div>
+        <p class="bold text-sm mb-sm">分割払い</p>
+        <p class="text-xs text-muted">高額商品も購入しやすく<br>購入者の「迷い」を減らせる<br>（別途審査あり）</p>
+      </div>
+    </div>
+
+    <div class="note-bar note-bar--accent mt-lg">初期費用・月額費用は 0円。手数料はご利用分だけ。</div>
+  </div>
+</section>
+
+<!-- ── 自動案内フロー — スライド 13 ── -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag">STEP 2：決済</span>
+    <h2 class="section-title">お申し込み後は、自動でご案内が届きます</h2>
+
+    <div class="grid-2">
+      <div class="flow-box">
+        <div class="flow-box__head">❌ 今までの流れ（手動）</div>
+        <div class="flow-box__body">
+          <p class="flow-step">申し込み完了</p>
+          <p class="flow-step flow-step--arrow">↓（入金待ち…）</p>
+          <p class="flow-step">手動で入金確認</p>
+          <p class="flow-step flow-step--arrow">↓（メール作成…）</p>
+          <p class="flow-step">手動でご案内送付</p>
+          <p class="flow-step flow-step--arrow">↓（ミス・遅延の恐れ）</p>
+          <p class="flow-step">コンテンツ案内</p>
+        </div>
+      </div>
+      <div class="flow-box flow-box--good">
+        <div class="flow-box__head">✅ MOSHなら（自動）</div>
+        <div class="flow-box__body">
+          <p class="flow-step">申し込み完了</p>
+          <p class="flow-step flow-step--arrow">↓（自動で即！）</p>
+          <p class="flow-step">自動でご案内送付</p>
+          <p class="flow-step flow-step--arrow">↓（ミスなし・遅延なし）</p>
+          <p class="flow-step">申込者向けサイトへご招待</p>
+          <p class="flow-step flow-step--arrow">↓</p>
+          <p class="flow-step flow-step--done">コンテンツ提供 完了🎉</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEP 2 まとめ — スライド 14 ── -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag tag--dark">STEP 2：まとめ</span>
+    <h2 class="section-title">STEP 2 まとめ</h2>
+
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">「単品販売」か「サブスク（月額）」を選んで設定するだけ</span></div>
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">クレジットカードも銀行振込も対応。入金確認は自動！</span></div>
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">お支払い完了後のご案内メールも自動で届く。ミスゼロ・遅延ゼロ</span></div>
+
+    <div class="cta-bar">STEP 3「申込者向けサイト（会員サイト）」へ進みます</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STEP 3 OPENER — スライド 15
+═══════════════════════════════════════════ -->
+<div class="step-opener">
+  <p class="step-opener__label">STEP 3</p>
+  <div class="step-opener__circle">3</div>
+  <h2 class="step-opener__title">申込者向けサイトの活用法</h2>
+  <p class="step-opener__sub">購入者へのコンテンツ提供・やりとりを一元化（MOSH内の名称：申込者向けサイト）</p>
+</div>
+
+<!-- ── 申込者向けサイトでできること — スライド 16 ── -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag">STEP 3：申込者向けサイト</span>
+    <h2 class="section-title">申込者向けサイト（会員サイト）でできること</h2>
+
+    <div class="note-bar text-italic mb-md">
+      MOSH上の操作順：サービス作成　→　サービスを選択　→　申込者向けサイト
+    </div>
+
+    <div class="grid-2">
+      <div class="wire-box border-left-accent">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">🎥</p>
+        <p class="bold text-sm mb-sm">動画・教材を１箇所に集約</p>
+        <p class="text-xs text-muted">バラバラのツールに散らばっていたコンテンツをMOSHひとつに集約</p>
+      </div>
+      <div class="wire-box border-left-accent">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">🔐</p>
+        <p class="bold text-sm mb-sm">権限付与が自動</p>
+        <p class="text-xs text-muted">申し込み完了と同時に、購入者だけが閲覧できる状態になる</p>
+      </div>
+      <div class="wire-box border-left-accent">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">📊</p>
+        <p class="bold text-sm mb-sm">閲覧状況の確認</p>
+        <p class="text-xs text-muted">どの教材を見たか・見ていないかが管理画面で確認できる</p>
+      </div>
+      <div class="wire-box border-left-accent">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">💬</p>
+        <p class="bold text-sm mb-sm">メッセージ配信</p>
+        <p class="text-xs text-muted">購入者への一斉連絡もMOSHから送信可能。ツール間の移動が不要</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 購入者体験 — スライド 17 ── -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag">STEP 3：申込者向けサイト</span>
+    <h2 class="section-title">購入者（ゲスト）が使いやすい体験を提供</h2>
+
+    <div class="check-row"><span style="font-size:1.1rem;flex-shrink:0;">📱</span><span class="text-sm">スマホ・PCどちらでも快適</span></div>
+    <div class="check-row"><span style="font-size:1.1rem;flex-shrink:0;">🤖</span><span class="text-sm">AI自動要約＋目次（動画コンテンツを自動整理）</span></div>
+    <div class="check-row"><span style="font-size:1.1rem;flex-shrink:0;">📌</span><span class="text-sm">ブックマーク・閲覧履歴で続きから再開</span></div>
+    <div class="check-row"><span style="font-size:1.1rem;flex-shrink:0;">🎯</span><span class="text-sm">ステップ公開（段階的にコンテンツを解放できる）</span></div>
+    <div class="check-row"><span style="font-size:1.1rem;flex-shrink:0;">🏠</span><span class="text-sm">スマホホーム画面にアイコン設置。購入者が直接アクセスできる</span></div>
+
+    <div class="note-bar note-bar--accent mt-lg">購入者の継続利用・満足度向上につながる体験設計が、MOSHには備わっています</div>
+  </div>
+</section>
+
+<!-- ── STEP 3 まとめ — スライド 18 ── -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag tag--dark">STEP 3：まとめ</span>
+    <h2 class="section-title">STEP 3 まとめ</h2>
+
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">購入者への教材・動画をMOSHひとつに集約できる</span></div>
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">申し込み後の権限付与は自動。手動作業が不要</span></div>
+    <div class="check-row"><span class="badge badge--check">✓</span><span class="text-sm">メッセージ配信で購入者へ直接連絡できる</span></div>
+
+    <div class="cta-bar mt-lg">紹介ページ（LP）　→　決済　→　申込者向けサイト … すべてMOSHひとつで構築できます</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     もっと活用したい方へ — スライド 19
+══════════════════════════════════════════ -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag tag--dark">もっと活用したい方へ</span>
+    <h2 class="section-title">慣れてきたら、さらに便利な機能も！</h2>
+    <p class="text-xs text-muted text-italic mb-md">今日は触れませんでしたが、こんな機能もあります（中級編で詳しく）</p>
+
+    <div class="grid-2">
+      <div class="wire-box">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">📲</p>
+        <p class="bold text-sm mb-sm">LINE連携</p>
+        <p class="text-xs text-muted">LINEと連動した自動タグ付けやシナリオ配信（準備中）</p>
+      </div>
+      <div class="wire-box">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">⚙️</p>
+        <p class="bold text-sm mb-sm">自動化フロー</p>
+        <p class="text-xs text-muted">購入後の案内・アップセルをMOSHで自動設定</p>
+      </div>
+      <div class="wire-box">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">📊</p>
+        <p class="bold text-sm mb-sm">顧客管理・データ分析</p>
+        <p class="text-xs text-muted">顧客一覧・購入履歴・売上レポートを一元管理</p>
+      </div>
+      <div class="wire-box">
+        <p style="font-size:1.2rem;margin-bottom:.3rem;">🤝</p>
+        <p class="bold text-sm mb-sm">コミュニティ機能</p>
+        <p class="text-xs text-muted">掲示板型でゲスト同士のつながりを生む場を作れる</p>
+      </div>
+    </div>
+
+    <p class="text-xs bold text-center mt-lg" style="color:var(--c600);">中級編の説明会も定期開催中！ → 詳細は最後にご案内します</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     実際の事例 — スライド 20〜22
+══════════════════════════════════════════ -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag">実際の事例</span>
+    <h2 class="section-title">規模感の近い事例から見てみましょう</h2>
+
+    <div class="grid-2 mb-lg">
+      <div class="case-card">
+        <div class="case-card__head">マナー講師 末永さん</div>
+        <div class="case-card__body">
+          <span class="case-card__tag">他社ツールから移行</span>
+          <p class="case-card__text">PaypalとWixで運用→MOSHへ移行
+会員サイトのデザイン・スマホアイコン・AI目次が決め手
+「顔が見える会社のサポートが安心」</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card__head">パン教室コミュニティ</div>
+        <div class="case-card__body">
+          <span class="case-card__tag">サブスク販売</span>
+          <p class="case-card__text">月額サブスクで掲示板一体型サイトを運営
+ステップ別にコンテンツを管理
+ゲスト同士が交流できる場を実現</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-muted text-center mb-lg">最初から全機能を使う必要はありません。実際の販売規模に応じて段階的に整えられます</p>
+
+    <h2 class="section-title">大きく成長したクリエイターも、MOSHを使っています</h2>
+    <div class="case-card--quote mb-lg">
+      <p class="case-card__name">英語コーチ／英語講師 タロサック</p>
+      <p class="case-card__quote">「銀振も全てMOSH、会員サイト閲覧自動化。凍結リスクを最小化し、顧客サービスに集中」</p>
+      <div class="check-row"><span class="badge badge--sm badge--check">✓</span><span class="text-xs">お支払いリスク対策としてMOSH（fincode）へ切り替え</span></div>
+      <div class="check-row"><span class="badge badge--sm badge--check">✓</span><span class="text-xs">銀行振込を含む全ての決済をMOSHで一元管理</span></div>
+      <div class="check-row"><span class="badge badge--sm badge--check">✓</span><span class="text-xs">ツールが分散していた会員サイトをMOSHで一本化</span></div>
+    </div>
+
+    <p class="text-xs text-muted text-center mb-lg">MOSHは累計登録クリエイター 85,000人・年間流通総額 150億円突破（2025年9月実績）</p>
+
+    <h2 class="section-title">「MOSHは何屋さん！？」と驚くほど多機能</h2>
+    <div class="case-card--quote">
+      <p class="case-card__name">お教室先生向けコンサル 岡村美香さん</p>
+      <p class="case-card__quote">「決済に会員サイトにLINEサポートにPR…MOSHは何屋さん！？」</p>
+      <div class="check-row"><span class="badge badge--sm badge--check">✓</span><span class="text-xs">WordpressからMOSHへ移行し、会員サイトをひとつに統合</span></div>
+      <div class="check-row"><span class="badge badge--sm badge--check">✓</span><span class="text-xs">コンテンツの移行作業もMOSHがサポート</span></div>
+      <div class="check-row"><span class="badge badge--sm badge--check">✓</span><span class="text-xs">品川駅広告掲載、芸能人との対談など、ブランディング支援も</span></div>
+    </div>
+    <div class="note-bar note-bar--accent mt-md">決済・会員サイト・顧客管理・サポートまで、MOSHひとつで完結します</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MOSHのサポート — スライド 23
+══════════════════════════════════════════ -->
+<section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag tag--dark">MOSHのサポート</span>
+    <h2 class="section-title">困ったときも、MOSHがそばにいます</h2>
+
+    <div class="support-row">
+      <div class="support-icon">💬</div>
+      <div>
+        <p class="support-title">システム面のお問い合わせ対応</p>
+        <p class="support-desc">購入者（ゲスト）からの「使い方がわからない」などの問い合わせはMOSHサポートが代わりに対応します</p>
+      </div>
+    </div>
+    <div class="support-row">
+      <div class="support-icon">📝</div>
+      <div>
+        <p class="support-title">領収書の自動発行</p>
+        <p class="support-desc">購入者がマイページから自分で領収書を取得できます。クリエイターが対応する手間ゼロ</p>
+      </div>
+    </div>
+    <div class="support-row">
+      <div class="support-icon">🤝</div>
+      <div>
+        <p class="support-title">お支払いトラブルのサポート</p>
+        <p class="support-desc">お支払いに関するトラブルが発生した際はMOSHがクリエイター・購入者の間に入って解決を支援</p>
+      </div>
+    </div>
+
+    <p class="text-xs bold text-center mt-lg" style="color:var(--c600);">クリエイターが、サービスや創作に集中できる環境をMOSHが作ります</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     料金プラン — スライド 24
+══════════════════════════════════════════ -->
+<section class="section section--light">
+  <div class="section__inner">
+    <span class="tag tag--dark">料金プラン</span>
+    <h2 class="section-title">まずは 0円からはじめられます</h2>
+
+    <div class="price-headline">
+      <p class="price-headline__text">初期費用 ¥0　・　月額費用 ¥0　・　使った分だけの手数料制</p>
+    </div>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>プラン</th>
+          <th>対象</th>
+          <th>特徴</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>スタンダード</td>
+          <td>はじめる方・サブスク販売</td>
+          <td>全基本機能が使えます</td>
+        </tr>
+        <tr>
+          <td>LP機能追加プラン</td>
+          <td>ページビルダーをフル活用したい方</td>
+          <td>ページビルダー全機能が使えます</td>
+        </tr>
+        <tr>
+          <td>全機能プラン</td>
+          <td>フル活用したい方</td>
+          <td>LINEシナリオ等の高度機能も利用可</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="price-note">※ 2026年4月以降、決済規模に応じた料金体系にアップグレード予定</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     気になっていただけた方へ（CTA）— スライド 25
+══════════════════════════════════════════ -->
+<section class="section section--dark">
+  <div class="section__inner">
+    <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:2rem;">気になっていただけた方へ</h2>
+
+    <div class="cta-item"><span class="cta-item__num">1️⃣</span><span>まずはMOSHに無料登録してみる（mosh.jp）</span></div>
+    <div class="cta-item"><span class="cta-item__num">2️⃣</span><span>プロフィールリンクを設定し、SNSに試しに載せてみる</span></div>
+    <div class="cta-item"><span class="cta-item__num">3️⃣</span><span>サービスを作成し、ページビルダーでLPを試してみる</span></div>
+    <div class="cta-item"><span class="cta-item__num">4️⃣</span><span>わからないことがあれば、MOSHサポートへお気軽にご相談を</span></div>
+
+    <div class="cta-qa">ご質問はありますか？　Q &amp; A タイム</div>
+  </div>
+</section>
+
+<footer class="footer">
+  MOSH はじめの一歩ガイド — ワイヤーフレーム版
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
