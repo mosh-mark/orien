@@ -48,7 +48,8 @@ html {
 body {
   font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
   color: var(--warm-900);
-  font-size: 14px;
+  /* ビューポート高さに比例してフォントサイズを縮小 */
+  font-size: clamp(11px, 1.6vh, 14px);
   line-height: 1.6;
   background: transparent;
 }
@@ -64,7 +65,7 @@ body {
   border-bottom: 1px solid rgba(250,110,120,0.08);
 }
 .section__inner {
-  padding: 3rem 2rem;
+  padding: clamp(1rem, 2.5vh, 3rem) 2rem;
   max-width: 840px;
   margin: 0 auto;
 }
@@ -97,9 +98,9 @@ body {
 
 /* ── Section title ── */
 .section-title {
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 2.2vh, 1.4rem);
   font-weight: 900;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.5rem, 1.2vh, 1.5rem);
   line-height: 1.35;
   color: var(--warm-900);
 }
@@ -118,15 +119,15 @@ body {
 }
 
 /* ── Grid ── */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.4rem, 0.8vh, 1rem); }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(0.4rem, 0.8vh, 1rem); }
 
 @media (max-width: 600px) {
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
 
 /* ── Flex row ── */
-.flex-row   { display: flex; gap: 1rem; }
+.flex-row   { display: flex; gap: clamp(0.4rem, 0.8vh, 1rem); }
 .flex-row--center { align-items: center; }
 .flex-1 { flex: 1; }
 
@@ -156,7 +157,7 @@ body {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
-.check-row + .check-row { margin-top: 0.5rem; }
+.check-row + .check-row { margin-top: clamp(0.2rem, 0.5vh, 0.5rem); }
 
 /* ── Goal row ── */
 .goal-row {
@@ -180,11 +181,11 @@ body {
   border: 1px solid rgba(250,110,120,0.20);
   border-radius: 10px;
   background: rgba(255,255,255,0.55);
-  padding: 0.7rem 1rem;
+  padding: clamp(0.4rem, 0.7vh, 0.7rem) 1rem;
   font-size: 0.75rem;
   color: var(--warm-600);
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: clamp(0.5rem, 1vh, 1.5rem);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -201,11 +202,11 @@ body {
   background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: var(--white);
   border-radius: 10px;
-  padding: 0.75rem 1.5rem;
+  padding: clamp(0.4rem, 0.7vh, 0.75rem) 1.5rem;
   text-align: center;
   font-size: 0.85rem;
   font-weight: 700;
-  margin-top: 1.5rem;
+  margin-top: clamp(0.5rem, 1vh, 1.5rem);
   box-shadow: 0 4px 16px rgba(250,110,120,0.35);
 }
 
@@ -235,9 +236,9 @@ body {
 .hero__inner {
   max-width: 840px;
   margin: 0 auto;
-  padding: 3.5rem 2rem;
+  padding: clamp(1.5rem, 3vh, 3.5rem) 2rem;
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 1.8vh, 2rem);
   align-items: flex-start;
 }
 .hero__left { flex: 1; }
@@ -1291,20 +1292,20 @@ body {
    FULL-PAGE SNAP SCROLL（プレゼン風）
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-/* 各スライドを 100vh に固定 */
+/* 各スライドを 100dvh に固定（モバイルアドレスバー考慮） */
 .hero,
 .section,
 .step-opener,
 footer.footer {
-  height: 100vh;
-  overflow-y: auto;
+  height: 100dvh;
+  overflow-y: hidden;   /* 内部スクロール禁止。JSスケーラーで対応 */
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
 }
 
 /* ヒーロー：縦中央揃え */
 .hero__inner {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
 }
@@ -1314,7 +1315,7 @@ footer.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   box-sizing: border-box;
 }
 

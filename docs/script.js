@@ -151,8 +151,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a =>
   })
 );
 
+// ── 自動スケーラー ──
+// コンテンツがビューポートに収まらないスライドを transform:scale で縮小する
+function autoScaleSlides() {
+  const viewH = window.innerHeight;
+
+  slides.forEach(slide => {
+    // inner コンテナを特定（section__inner / hero__inner / step-opener 自身）
+    const inner = slide.querySelector('.section__inner, .hero__inner') || slide;
+
+    // スケールをリセットしてから実測
+    inner.style.transform = '';
+    inner.style.transformOrigin = '';
+
+    void inner.offsetHeight; // reflow を強制
+
+    const contentH = inner.scrollHeight;
+    if (contentH > viewH) {
+      const scale = viewH / contentH;
+      inner.style.transform      = `scale(${scale})`;
+      inner.style.transformOrigin = 'top center';
+    }
+  });
+}
+
 // ── 初期化 ──
 buildNav();
 buildCounter();
 // 最初のスライドをアクティブに
 activateSlide(0);
+// スライドを自動スケール
+autoScaleSlides();
+window.addEventListener('resize', autoScaleSlides);
