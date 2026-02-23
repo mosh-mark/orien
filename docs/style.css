@@ -36,15 +36,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  /* warm pink-to-peach gradient background, stays fixed while content scrolls */
-  background-color: #fff0f1;
-  background-image:
-    radial-gradient(ellipse 90% 70% at 10% 10%,  rgba(253,200,205,0.75) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 60% at 90% 20%,  rgba(255,220,180,0.55) 0%, transparent 50%),
-    radial-gradient(ellipse 70% 80% at 50% 90%,  rgba(255,200,210,0.60) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,240,241,1.0) 0%, rgba(255,230,200,0.4) 100%);
+  /* grain texture background image — fixed so it stays still while content scrolls */
+  background-color: #f5c8d0;
+  background-image: url('images/bg.png');
   background-attachment: fixed;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 body {
@@ -1426,3 +1424,45 @@ footer.footer {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
 }
+
+/* ── スライド要素アニメーション ──────────────────────────── */
+/* 背景は background-attachment:fixed で静止、要素だけ動かす   */
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* アクティブになったスライドの直接子要素をスタガーでフェードイン */
+.slide--active > * {
+  animation: revealUp 0.52s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* 各子要素に遅延をかける（最大8個まで対応） */
+.slide--active > *:nth-child(1) { animation-delay: 0.00s; }
+.slide--active > *:nth-child(2) { animation-delay: 0.07s; }
+.slide--active > *:nth-child(3) { animation-delay: 0.14s; }
+.slide--active > *:nth-child(4) { animation-delay: 0.21s; }
+.slide--active > *:nth-child(5) { animation-delay: 0.28s; }
+.slide--active > *:nth-child(6) { animation-delay: 0.35s; }
+.slide--active > *:nth-child(7) { animation-delay: 0.42s; }
+.slide--active > *:nth-child(8) { animation-delay: 0.49s; }
+
+/* section__inner の子要素にも同様に適用 */
+.slide--active .section__inner > * {
+  animation: revealUp 0.52s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.slide--active .section__inner > *:nth-child(1) { animation-delay: 0.05s; }
+.slide--active .section__inner > *:nth-child(2) { animation-delay: 0.12s; }
+.slide--active .section__inner > *:nth-child(3) { animation-delay: 0.19s; }
+.slide--active .section__inner > *:nth-child(4) { animation-delay: 0.26s; }
+.slide--active .section__inner > *:nth-child(5) { animation-delay: 0.33s; }
+.slide--active .section__inner > *:nth-child(6) { animation-delay: 0.40s; }
+.slide--active .section__inner > *:nth-child(7) { animation-delay: 0.47s; }
+.slide--active .section__inner > *:nth-child(8) { animation-delay: 0.54s; }

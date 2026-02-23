@@ -21,12 +21,29 @@ function nearest() {
   , 0);
 }
 
+// ── アクティブスライドのアニメーション切り替え ──
+function activateSlide(idx) {
+  slides.forEach((s, i) => {
+    if (i === idx) {
+      // 一旦クラスを外して付け直すことでアニメーションを再トリガー
+      s.classList.remove('slide--active');
+      // 次フレームで追加（reflow を強制）
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => s.classList.add('slide--active'));
+      });
+    } else {
+      s.classList.remove('slide--active');
+    }
+  });
+}
+
 // ── 指定インデックスへ移動 ──
 function go(idx) {
   if (idx < 0 || idx >= slides.length || isMoving) return;
   isMoving = true;
   current  = idx;
   slides[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  activateSlide(idx);
   updateDots();
   updateCounter();
   setTimeout(() => { isMoving = false; }, DURATION);
@@ -137,3 +154,5 @@ document.querySelectorAll('a[href^="#"]').forEach(a =>
 // ── 初期化 ──
 buildNav();
 buildCounter();
+// 最初のスライドをアクティブに
+activateSlide(0);
