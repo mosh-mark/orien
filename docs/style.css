@@ -306,11 +306,18 @@ body {
   line-height: 1;
   margin-bottom: 0.3rem;
 }
+.hero__logo {
+  height: clamp(2rem, 3.5vh, 3.5rem);
+  width: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+}
 .hero__subtitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--warm-800);
+  font-size: clamp(2rem, 4vh, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  color: var(--warm-900);
+  line-height: 1.2;
 }
 .hero__caption {
   font-size: 0.8rem;
