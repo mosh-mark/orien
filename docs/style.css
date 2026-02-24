@@ -1156,19 +1156,18 @@ body {
 }
 
 .case-card-full__img-wrap {
-  flex: 0 0 160px;
-  align-self: stretch;
+  flex: 0 0 140px;
+  align-self: flex-start;
   background: var(--warm-100);
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .case-card-full__img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
-  min-height: 140px;
+  object-fit: contain;
 }
 
 .case-card-full__body {
