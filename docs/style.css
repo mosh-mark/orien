@@ -121,9 +121,10 @@ body {
 /* ── Grid ── */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.4rem, 0.8vh, 1rem); }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(0.4rem, 0.8vh, 1rem); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.4rem, 0.8vh, 1rem); }
 
 @media (max-width: 600px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
 
 /* ── Flex row ── */
