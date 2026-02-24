@@ -313,7 +313,7 @@ body {
   font-size: clamp(2rem, 4vh, 4.5rem);
   font-weight: 800;
   margin-bottom: 0.6rem;
-  color: var(--warm-900);
+  color: var(--brand);
   line-height: 1.2;
 }
 .hero__logo {
