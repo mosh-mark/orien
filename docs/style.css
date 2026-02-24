@@ -55,9 +55,8 @@ body {
 }
 
 .container {
-  max-width: 840px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
 }
 
 /* ── Section ── */
@@ -65,9 +64,7 @@ body {
   border-bottom: 1px solid rgba(250,110,120,0.08);
 }
 .section__inner {
-  padding: clamp(1rem, 2.5vh, 3rem) 2rem;
-  max-width: 840px;
-  margin: 0 auto;
+  padding: clamp(1rem, 2.5vh, 3rem) clamp(1.5rem, 5vw, 5rem);
 }
 .section--light { background: rgba(255,255,255,0.50); }
 .section--gray  { background: rgba(255,240,241,0.45); }
@@ -288,9 +285,7 @@ body {
 }
 
 .hero__inner {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: clamp(1.5rem, 3vh, 3.5rem) 2rem;
+  padding: clamp(1.5rem, 3vh, 3.5rem) clamp(1.5rem, 5vw, 5rem);
   display: flex;
   gap: clamp(1rem, 1.8vh, 2rem);
   align-items: flex-start;
