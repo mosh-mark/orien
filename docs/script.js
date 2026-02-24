@@ -50,11 +50,19 @@ function go(idx) {
 }
 
 // ── ホイールイベント ──
-// overflow-y: hidden で内部スクロール禁止のため、常にスライド間移動のみ行う
+// nearest() はアニメーション中にズレるため、常に current を基準にする。
+// トラックパッドの慣性スクロール対策でクールダウン + deltaY 閾値を設ける。
+let lastWheelTime = 0;
+const WHEEL_COOLDOWN = 400; // アニメーション後に受け付けるまでの待機 (ms)
+
 window.addEventListener('wheel', e => {
   e.preventDefault();
   if (isMoving) return;
-  go(nearest() + (e.deltaY > 0 ? 1 : -1));
+  if (Math.abs(e.deltaY) < 8) return;            // 慣性スクロールの微小イベントを除外
+  const now = Date.now();
+  if (now - lastWheelTime < WHEEL_COOLDOWN) return; // 連続発火を抑制
+  lastWheelTime = now;
+  go(current + (e.deltaY > 0 ? 1 : -1));
 }, { passive: false });
 
 // ── キーボード ──
@@ -62,10 +70,10 @@ document.addEventListener('keydown', e => {
   if (isMoving) return;
   if (['ArrowDown', 'PageDown', ' '].includes(e.key)) {
     e.preventDefault();
-    go(nearest() + 1);
+    go(current + 1);
   } else if (['ArrowUp', 'PageUp'].includes(e.key)) {
     e.preventDefault();
-    go(nearest() - 1);
+    go(current - 1);
   }
 });
 
@@ -77,7 +85,7 @@ document.addEventListener('touchstart', e => {
 document.addEventListener('touchend', e => {
   if (isMoving) return;
   const delta = touchY - e.changedTouches[0].clientY;
-  if (Math.abs(delta) > 50) go(nearest() + (delta > 0 ? 1 : -1));
+  if (Math.abs(delta) > 50) go(current + (delta > 0 ? 1 : -1));
 }, { passive: true });
 
 // ── スライドの短いラベル一覧 ──
