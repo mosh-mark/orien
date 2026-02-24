@@ -306,18 +306,21 @@ body {
   line-height: 1;
   margin-bottom: 0.3rem;
 }
-.hero__logo {
-  height: clamp(2rem, 3.5vh, 3.5rem);
-  width: auto;
-  display: block;
-  margin-bottom: 1.5rem;
-}
 .hero__subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
   font-size: clamp(2rem, 4vh, 4.5rem);
   font-weight: 800;
   margin-bottom: 0.6rem;
   color: var(--warm-900);
   line-height: 1.2;
+}
+.hero__logo {
+  height: 0.8em;
+  width: auto;
+  display: inline-block;
+  flex-shrink: 0;
 }
 .hero__caption {
   font-size: 0.8rem;
