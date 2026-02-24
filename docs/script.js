@@ -215,7 +215,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a =>
 // 画面に余白があれば拡大、溢れれば縮小する双方向スケーラー。
 // zoom はレイアウトごとスケールするため transform アニメーションと干渉しない。
 const SCALE_TARGET = 0.90; // 画面高さの何割を目標にするか
-const SCALE_MAX    = 1.25; // 拡大の上限（大きすぎ防止）
+const SCALE_MAX    = 1.00; // 拡大の上限（スケールアップ無効化でフォント一貫性を確保）
 const SCALE_MIN    = 0.55; // 縮小の下限（小さすぎ防止）
 
 function autoScaleSlides() {
