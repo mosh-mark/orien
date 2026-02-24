@@ -48,8 +48,8 @@ html {
 body {
   font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
   color: var(--warm-900);
-  /* ビューポート高さに比例してフォントサイズを縮小 */
-  font-size: clamp(11px, 1.6vh, 14px);
+  /* ビューポート高さに比例してフォントサイズをスケール */
+  font-size: clamp(12px, 1.9vh, 17px);
   line-height: 1.6;
   background: transparent;
 }

@@ -209,8 +209,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a =>
 );
 
 // ── 自動スケーラー ──
-// コンテンツがビューポートに収まらないスライドを zoom で縮小する。
-// zoom はレイアウトごと縮小するため transform アニメーションと干渉しない。
+// 画面に余白があれば拡大、溢れれば縮小する双方向スケーラー。
+// zoom はレイアウトごとスケールするため transform アニメーションと干渉しない。
+const SCALE_TARGET = 0.90; // 画面高さの何割を目標にするか
+const SCALE_MAX    = 1.25; // 拡大の上限（大きすぎ防止）
+const SCALE_MIN    = 0.55; // 縮小の下限（小さすぎ防止）
+
 function autoScaleSlides() {
   const viewH = window.innerHeight;
 
@@ -223,8 +227,10 @@ function autoScaleSlides() {
     void inner.offsetHeight; // reflow を強制
 
     const contentH = inner.scrollHeight;
-    if (contentH > viewH) {
-      const scale = viewH / contentH;
+    const ratio = (viewH * SCALE_TARGET) / contentH;
+    // 上限・下限でクランプ。ほぼ 1.0 の場合はリセット（不要な zoom を避ける）
+    const scale = Math.min(Math.max(ratio, SCALE_MIN), SCALE_MAX);
+    if (Math.abs(scale - 1) > 0.02) {
       inner.style.zoom = scale;
     }
   });
