@@ -255,8 +255,19 @@ body {
   line-height: 1;
   color: var(--warm-300);
 }
-.icebreak-card--b .icebreak-card__num {
+.icebreak-card--a {
+  border-color: var(--brand);
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+}
+.icebreak-card--a .icebreak-card__num {
   color: var(--brand);
+}
+.icebreak-card--b {
+  border-color: #5b8dee;
+  background: linear-gradient(135deg, #f0f5ff 0%, #fff 100%);
+}
+.icebreak-card--b .icebreak-card__num {
+  color: #5b8dee;
 }
 .icebreak-card__label {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
