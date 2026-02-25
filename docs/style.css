@@ -1226,18 +1226,20 @@ body {
 }
 
 .case-card-full__img-wrap {
-  flex: 0 0 140px;
-  align-self: flex-start;
+  flex: 0 0 45%;
+  align-self: stretch;
   background: var(--warm-100);
   border-radius: 8px;
   overflow: hidden;
+  min-height: 160px;
 }
 
 .case-card-full__img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .case-card-full__body {
