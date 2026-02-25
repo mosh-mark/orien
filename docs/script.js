@@ -7,7 +7,7 @@
 // ================================================================
 
 const DURATION = 750; // スクロールアニメーション時間 (ms)
-const SELECTOR = '.hero, .section, .step-opener, footer.footer';
+const SELECTOR = '.hero, .section, .step-opener';
 const slides   = Array.from(document.querySelectorAll(SELECTOR));
 
 let isMoving = false;

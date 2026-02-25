@@ -1411,8 +1411,7 @@ body {
 /* 各スライドを 100dvh に固定（モバイルアドレスバー考慮） */
 .hero,
 .section,
-.step-opener,
-footer.footer {
+.step-opener {
   height: 100dvh;
   overflow-y: hidden;   /* 内部スクロール禁止。JSスケーラーで対応 */
   box-sizing: border-box;
@@ -1446,11 +1445,41 @@ footer.footer {
   justify-content: center;
 }
 
-/* フッター：縦中央揃え */
-footer.footer {
-  display: flex;
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Q & A スライド
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.section__inner--center {
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.qa-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vh, 1.75rem);
+}
+
+.qa-block__icon {
+  font-size: clamp(3rem, 8vh, 6rem);
+  line-height: 1;
+}
+
+.qa-block__title {
+  font-size: clamp(2rem, 5vh, 4rem);
+  font-weight: 900;
+  color: var(--warm-900);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.qa-block__sub {
+  font-size: clamp(1rem, 2.5vh, 1.75rem);
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: 0.08em;
+  margin: 0;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
