@@ -542,6 +542,27 @@ body {
 .flow-step--done  { font-weight: 700; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SALES STYLE LAYOUT (image + cards 2-col)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.sales-style-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  width: 100%;
+}
+.sales-style-layout__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+.sales-style-layout__content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    PAYMENT types
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .payment-box {
