@@ -97,13 +97,17 @@ document.addEventListener('touchend', e => {
 // major: true  → 大項目（STEP opener・独立スライド）
 // major: false → 小項目（各 STEP の詳細スライド）
 const SLIDE_CONFIG = [
-  { label: 'TOP',                major: true },
-  { label: '今日の内容',         major: true },
-  { label: 'プロフィールリンク', major: true },
-  { label: 'AI Studio',          major: true },
-  { label: 'ページビルダー',     major: true },
-  { label: 'ワークフロー',       major: true },
-  { label: 'さっそく使おう',     major: true },
+  { label: 'TOP',                     major: true  },
+  { label: '今日の流れ',              major: true  },
+  { label: '① プロフィールリンク',   major: true  },
+  { label: '　└ 使い方・活用シーン', major: false },
+  { label: '② AI Studio',            major: true  },
+  { label: '　└ 使い方・活用シーン', major: false },
+  { label: '③ ページビルダー',       major: true  },
+  { label: '　└ 使い方・活用シーン', major: false },
+  { label: '④ ワークフロー',         major: true  },
+  { label: '　└ 使い方・活用シーン', major: false },
+  { label: 'さっそく使おう',          major: true  },
 ];
 
 // ── ナビゲーション（目次 + 進捗）生成 ──
