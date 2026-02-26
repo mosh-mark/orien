@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../style.css">
   <style>
     /* ════════════════════════════════
-       新機能ページ 補足スタイル v2（可読性改善）
+       新機能ページ 補足スタイル v3（要素統一・テキスト削減・ビジュアル強化）
     ════════════════════════════════ */
 
     /* ── 全体: セクションパディングを適正化（parent CSS override）── */
@@ -210,9 +210,6 @@
     .check-icon {
       font-size: 1.25rem; flex-shrink: 0; width: 1.9rem; text-align: center;
     }
-    .check-sub {
-      font-size: 0.78rem; color: var(--warm-600); line-height: 1.45; margin-top: 0.12rem;
-    }
 
     /* ── 使い方ステップ ── */
     .how-steps { display: flex; flex-direction: column; gap: clamp(0.25rem, 0.5vh, 0.45rem); }
@@ -257,17 +254,17 @@
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: 12px;
-      padding: 0.65rem 0.95rem;
+      padding: 0.55rem 0.95rem;
       box-shadow: var(--glass-shadow);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
     .usecase-card__role {
-      font-size: 0.7rem; font-weight: 700; color: var(--brand);
-      margin-bottom: 0.15rem;
+      font-size: 0.78rem; font-weight: 700; color: var(--brand);
+      margin-bottom: 0.1rem;
     }
     .usecase-card__text {
-      font-size: 0.82rem; color: var(--warm-700); line-height: 1.5;
+      font-size: 0.8rem; color: var(--warm-700); line-height: 1.4;
     }
 
     /* ── ビジュアルパネル（右カラム）── */
@@ -283,31 +280,6 @@
     .visual-panel__title {
       font-size: 0.7rem; font-weight: 700; color: var(--warm-500);
       text-align: center; margin-bottom: 0.65rem; letter-spacing: 0.05em;
-    }
-
-    /* ── AI Studio ビジュアル ── */
-    .ai-prompt-box {
-      background: rgba(255,255,255,0.8);
-      border: 1.5px solid rgba(250,110,120,0.25);
-      border-radius: 8px; padding: 0.5rem 0.75rem;
-      font-size: 0.78rem; color: var(--warm-700);
-      margin-bottom: 0.45rem;
-    }
-    .ai-prompt-box__label {
-      font-size: 0.62rem; font-weight: 700; color: var(--warm-500); margin-bottom: 0.15rem;
-    }
-    .ai-arrow-center {
-      text-align: center; font-size: 0.72rem; color: var(--brand);
-      font-weight: 700; margin: 0.2rem 0;
-    }
-    .ai-result-box {
-      background: rgba(250,110,120,0.08);
-      border: 1.5px solid rgba(250,110,120,0.35);
-      border-radius: 8px; padding: 0.5rem 0.75rem;
-      font-size: 0.78rem; color: var(--warm-800);
-    }
-    .ai-result-box__label {
-      font-size: 0.62rem; font-weight: 700; color: var(--brand); margin-bottom: 0.15rem;
     }
 
     /* ── ページビルダー ビジュアル ── */
@@ -332,7 +304,9 @@
       font-size: 0.75rem; color: var(--warm-800);
       text-align: center;
     }
-    .wf-node--trigger { border-color: var(--brand); background: rgba(250,110,120,0.08); font-weight: 700; }
+    .wf-node--trigger { border-color: var(--brand); background: rgba(250,110,120,0.08); font-weight: 700; color: var(--brand); }
+    .wf-node--action  { border-color: rgba(80,130,255,0.4); background: rgba(80,130,255,0.07); color: #2244bb; }
+    .wf-node--follow  { border-color: rgba(60,180,100,0.45); background: rgba(60,180,100,0.08); font-weight: 600; color: #1e7a45; }
     .wf-arrow-down {
       text-align: center; font-size: 0.7rem; color: var(--warm-400);
       padding: 0.08rem 0;
@@ -340,6 +314,110 @@
     .wf-arrow-down span {
       display: block; font-size: 0.62rem; color: var(--brand); font-weight: 600;
     }
+
+    /* ── プロフィールリンク — stat ボックス ── */
+    .stat-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.65rem;
+      justify-content: center;
+    }
+    .stat-box {
+      flex: 1;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      padding: 0.5rem 0.3rem;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .stat-box__num {
+      font-size: clamp(0.95rem, 1.6vh, 1.25rem);
+      font-weight: 900;
+      color: var(--brand);
+      line-height: 1;
+    }
+    .stat-box__label {
+      font-size: 0.62rem;
+      color: var(--warm-600);
+      margin-top: 0.18rem;
+      line-height: 1.3;
+    }
+
+    /* ── AI Studio — チャットバブル UI ── */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .chat-bubble {
+      max-width: 88%;
+      padding: 0.48rem 0.72rem;
+      border-radius: 14px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+    .chat-bubble--user {
+      align-self: flex-end;
+      background: rgba(250,110,120,0.12);
+      border: 1px solid rgba(250,110,120,0.28);
+      color: var(--warm-700);
+      border-bottom-right-radius: 4px;
+    }
+    .chat-bubble--ai {
+      align-self: flex-start;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--glass-border);
+      color: var(--warm-800);
+      border-bottom-left-radius: 4px;
+    }
+    .chat-bubble__label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      margin-bottom: 0.12rem;
+    }
+    .chat-bubble--user .chat-bubble__label { color: var(--brand); }
+    .chat-bubble--ai  .chat-bubble__label { color: var(--warm-400); }
+    .chat-timer {
+      font-size: 0.62rem;
+      color: var(--warm-400);
+      text-align: center;
+      padding: 0.05rem 0;
+    }
+
+    /* ── ページビルダー — ブラウザモック ── */
+    .browser-mock {
+      background: #fff;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+    }
+    .browser-mock__bar {
+      background: #f0f0f2;
+      padding: 0.35rem 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .browser-mock__dots { display: flex; gap: 0.22rem; }
+    .browser-mock__dot  { width: 0.5rem; height: 0.5rem; border-radius: 50%; }
+    .browser-mock__dot:nth-child(1) { background: #ff5f57; }
+    .browser-mock__dot:nth-child(2) { background: #febc2e; }
+    .browser-mock__dot:nth-child(3) { background: #28c840; }
+    .browser-mock__url {
+      flex: 1;
+      font-size: 0.62rem;
+      color: var(--warm-500);
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 4px;
+      padding: 0.1rem 0.4rem;
+      font-family: monospace;
+    }
+    .browser-mock__body { padding: 0.5rem 0.6rem; }
   </style>
 </head>
 <body>
@@ -471,11 +549,11 @@
     <div class="before-after">
       <div class="ba-item ba-item--before">
         <div class="ba-item__label">😓 今まで</div>
-        SNSに貼れるリンクが1つだけで、複数のサービスを同時に案内できない
+        SNSのリンクが1つだけで、複数サービスを同時に案内できない
       </div>
       <div class="ba-item ba-item--after">
         <div class="ba-item__label">✅ これから</div>
-        1つのURLで全サービスを一覧表示。どのサービスへのアクセスが多いか把握もできる
+        1つのURLで全サービスを一覧表示。アクセス解析もできる
       </div>
     </div>
 
@@ -485,29 +563,20 @@
         <span class="sub-label">できること</span>
         <div class="check-row">
           <span class="check-icon">📎</span>
-          <div>
-            <strong>SNSに貼るだけで全サービスを一覧表示</strong>
-            <div class="check-sub">mosh.jp/@あなたのID という1本のURLをInstagramなどのプロフ欄に貼るだけ。訪問者は全サービスをまとめて確認できる。</div>
-          </div>
+          <div><strong>SNSに貼るだけで全サービスを一覧表示</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">📊</span>
-          <div>
-            <strong>アクセス解析でどのサービスが人気か把握</strong>
-            <div class="check-sub">各サービスへのクリック数をリアルタイムで確認。人気メニューを上位に置いて成約率を改善できる。</div>
-          </div>
+          <div><strong>アクセス解析でどのサービスが人気か把握</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">✏️</span>
-          <div>
-            <strong>デザイン・順番を自由に編集</strong>
-            <div class="check-sub">サービスの追加・削除・並べ替えが即反映。プロフィール写真・自己紹介・SNSリンクも一元管理。</div>
-          </div>
+          <div><strong>デザイン・並び順をいつでも自由に編集</strong></div>
         </div>
       </div>
 
       <!-- 右：ビジュアル -->
-      <div style="display:flex; justify-content:center;">
+      <div style="display:flex; flex-direction:column; align-items:center;">
         <div class="phone-mock">
           <div class="phone-mock__screen">👤</div>
           <div class="phone-mock__body">
@@ -516,6 +585,21 @@
             <div class="phone-mock__btn">🧘 体験レッスン →</div>
             <div class="phone-mock__btn">📅 月謝制クラス →</div>
             <div class="phone-mock__btn">📚 動画コース →</div>
+          </div>
+        </div>
+        <!-- 統計ボックス -->
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-box__num">500+</div>
+            <div class="stat-box__label">月間<br>アクセス</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box__num">38%</div>
+            <div class="stat-box__label">クリック率<br>（平均比）</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box__num">8件</div>
+            <div class="stat-box__label">連携<br>サービス数</div>
           </div>
         </div>
       </div>
@@ -547,21 +631,21 @@
             <div class="how-step__num">1</div>
             <div class="how-step__body">
               <div class="how-step__title">プロフィールページを開く</div>
-              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/profile</span> にアクセス</div>
+              <div class="how-step__desc"><span class="url-tag">mosh.jp/creator/profile</span></div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">2</div>
             <div class="how-step__body">
-              <div class="how-step__title">紹介したいサービスを追加・並べ替え</div>
-              <div class="how-step__desc">既存のMOSHサービスをワンクリックで追加。ドラッグで順番を変更できる</div>
+              <div class="how-step__title">サービスを追加・並べ替え</div>
+              <div class="how-step__desc">ドラッグで順番を自由に変更できる</div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">3</div>
             <div class="how-step__body">
-              <div class="how-step__title">完成したURLをSNSのプロフ欄に貼るだけ</div>
-              <div class="how-step__desc">mosh.jp/@ID をコピーしてInstagramやLINEに設定して完了</div>
+              <div class="how-step__title">URLをSNSのプロフ欄に貼るだけ</div>
+              <div class="how-step__desc">mosh.jp/@ID をInstagramやLINEに設定して完了</div>
             </div>
           </div>
         </div>
@@ -573,15 +657,15 @@
         <div class="usecase-cards">
           <div class="usecase-card">
             <div class="usecase-card__role">🧘 ヨガ・フィットネス系クリエイター</div>
-            <div class="usecase-card__text">「体験・月謝・グッズ」と複数メニューがある方。Instagramのプロフ欄に1本貼るだけで全部見せられる。</div>
+            <div class="usecase-card__text">Instagramのプロフ欄1本で全メニューを見せられる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">🎓 コーチ・コンサル系クリエイター</div>
-            <div class="usecase-card__text">個別セッション・グループ・お試しなど複数タイプを提供中の方。どのサービスへのアクセスが多いか解析も可能。</div>
+            <div class="usecase-card__text">どのサービスへのアクセスが多いかリアルタイムで解析できる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">🎨 ハンドメイド・制作系クリエイター</div>
-            <div class="usecase-card__text">販売・ワークショップ・受注など複数チャンネルをお持ちの方。SNS経由の集客を一本化できる。</div>
+            <div class="usecase-card__text">販売・ワークショップ・受注をSNS経由で一本化できる</div>
           </div>
         </div>
       </div>
@@ -608,11 +692,11 @@
     <div class="before-after">
       <div class="ba-item ba-item--before">
         <div class="ba-item__label">😓 今まで</div>
-        サービス説明を書くのに1〜2時間かかる。何を書けばいいか悩んでなかなか公開できない
+        サービス説明を書くのに1〜2時間。何を書けばいいか悩む
       </div>
       <div class="ba-item ba-item--after">
         <div class="ba-item__label">✅ これから</div>
-        キーワードを入れるだけで、魅力的な文章が数秒で完成。そのまま使うか少し直せばOK
+        キーワードを入れるだけで魅力的な文章が数秒で完成
       </div>
     </div>
 
@@ -622,39 +706,32 @@
         <span class="sub-label">できること</span>
         <div class="check-row">
           <span class="check-icon">✍️</span>
-          <div>
-            <strong>サービスのタイトル・説明文をAIが自動生成</strong>
-            <div class="check-sub">ジャンルとターゲットを入力するだけで、魅力的な文章がすぐに完成。文章を書くのが苦手な方でも安心。</div>
-          </div>
+          <div><strong>サービスのタイトル・説明文をAIが自動生成</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">💡</span>
-          <div>
-            <strong>売れやすい価格・見せ方をAIがアドバイス</strong>
-            <div class="check-sub">類似サービスのデータをもとに、価格帯・訴求ポイント・ページ構成についてAIが提案してくれる。</div>
-          </div>
+          <div><strong>売れやすい価格・見せ方をAIがアドバイス</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">💬</span>
-          <div>
-            <strong>問い合わせ返信・フォローメールをAIが下書き</strong>
-            <div class="check-sub">お客様への返信文や購入後のフォローメールをAIが文案を提案。トーンを選んでそのまま送信できる。</div>
-          </div>
+          <div><strong>問い合わせ返信・フォローメールをAIが下書き</strong></div>
         </div>
       </div>
 
-      <!-- 右：ビジュアル -->
+      <!-- 右：チャットバブル UI -->
       <div class="visual-panel">
-        <div class="visual-panel__title">AIによる文章生成 イメージ</div>
-        <div class="ai-prompt-box">
-          <div class="ai-prompt-box__label">📝 入力</div>
-          「ヨガ初心者向け、オンラインクラス、毎週土曜朝8時、緊張ほぐし目的」
-        </div>
-        <div class="ai-arrow-center">↓ AI生成（約5秒）</div>
-        <div class="ai-result-box">
-          <div class="ai-result-box__label">✨ 出力</div>
-          🧘 <strong>はじめてのヨガ、自宅で気軽に</strong><br>
-          <span style="font-size:0.75rem; color:var(--warm-600);">硬くても大丈夫。毎週土曜の朝、たった60分で心と体がリセットされます。初心者専用クラスで、一から丁寧に指導します。</span>
+        <div class="visual-panel__title">AIとの会話 イメージ</div>
+        <div class="chat-container">
+          <div class="chat-bubble chat-bubble--user">
+            <div class="chat-bubble__label">💬 あなた</div>
+            ヨガ初心者向け、土曜朝、オンライン、緊張ほぐし目的
+          </div>
+          <div class="chat-timer">↓ 約5秒</div>
+          <div class="chat-bubble chat-bubble--ai">
+            <div class="chat-bubble__label">🤖 AI Studio</div>
+            🧘 <strong>はじめてのヨガ、自宅で気軽に</strong><br>
+            <span style="font-size:0.72rem; color:var(--warm-600);">毎週土曜の朝、60分で心と体がリセット。初心者専用クラスで丁寧に指導します。</span>
+          </div>
         </div>
       </div>
     </div>
@@ -685,21 +762,21 @@
             <div class="how-step__num">1</div>
             <div class="how-step__body">
               <div class="how-step__title">AI Studioを開く</div>
-              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/agent-chats</span> にアクセス</div>
+              <div class="how-step__desc"><span class="url-tag">mosh.jp/creator/agent-chats</span></div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">2</div>
             <div class="how-step__body">
-              <div class="how-step__title">ジャンル・ターゲット・特徴を入力（1〜2分）</div>
-              <div class="how-step__desc">キーワードを箇条書きで入れるだけでOK。詳しく書くほど精度が上がる</div>
+              <div class="how-step__title">ジャンル・ターゲット・特徴を入力</div>
+              <div class="how-step__desc">キーワードを箇条書きで入れるだけでOK</div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">3</div>
             <div class="how-step__body">
               <div class="how-step__title">生成された文章を確認・微調整して完成</div>
-              <div class="how-step__desc">気に入らない部分だけ直せばOK。再生成も何度でもできる</div>
+              <div class="how-step__desc">気に入らない部分だけ直せばOK。再生成も無制限</div>
             </div>
           </div>
         </div>
@@ -711,15 +788,15 @@
         <div class="usecase-cards">
           <div class="usecase-card">
             <div class="usecase-card__role">📝 文章を書くのが苦手な方</div>
-            <div class="usecase-card__text">「どんな言葉で魅力を伝えれば...」と悩む必要なし。AIがサービスの特徴を魅力的な文章にしてくれる。</div>
+            <div class="usecase-card__text">AIがサービスの特徴を魅力的な文章にしてくれる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">🚀 新しいサービスをすぐ出したい方</div>
-            <div class="usecase-card__text">アイデアをAIに伝えるだけでページの骨格が数分で完成。リリースまでの時間を大幅に短縮できる。</div>
+            <div class="usecase-card__text">アイデアを伝えるだけでページの骨格が数分で完成する</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">📈 売上をもっと伸ばしたい方</div>
-            <div class="usecase-card__text">既存のサービス説明文をAIでリライト。価格設定アドバイスも活用して成約率改善につなげられる。</div>
+            <div class="usecase-card__text">既存の説明文をAIでリライトして成約率を改善できる</div>
           </div>
         </div>
       </div>
@@ -746,11 +823,11 @@
     <div class="before-after">
       <div class="ba-item ba-item--before">
         <div class="ba-item__label">😓 今まで</div>
-        LPを作るには外注するか、別のツールを覚える必要があった。コストも時間もかかる
+        LPを作るには外注か別ツールの習得が必要。コストも時間もかかる
       </div>
       <div class="ba-item ba-item--after">
         <div class="ba-item__label">✅ これから</div>
-        ノーコードで自分だけのページを作れる。MOSHの申込・決済もそのまま組み込める
+        ノーコードで自分だけのページを作れる。決済もそのまま組み込める
       </div>
     </div>
 
@@ -760,35 +837,36 @@
         <span class="sub-label">できること</span>
         <div class="check-row">
           <span class="check-icon">🧱</span>
-          <div>
-            <strong>ブロックを並べるだけでLPが完成</strong>
-            <div class="check-sub">テキスト・画像・動画・お客様の声など豊富なブロックをドラッグ＆ドロップで組み合わせるだけ。コーディング不要。</div>
-          </div>
+          <div><strong>ブロックを並べるだけでLPが完成</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">🛒</span>
-          <div>
-            <strong>MOSHの申込・決済ボタンをそのまま埋め込み</strong>
-            <div class="check-sub">MOSHの申込フォームや決済機能をページに直接埋め込めるため、外部ツール不要で「集客→販売」を1ページで完結。</div>
-          </div>
+          <div><strong>MOSHの申込・決済ボタンをそのまま埋め込み</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">📱</span>
-          <div>
-            <strong>PC・スマホどちらも美しく表示</strong>
-            <div class="check-sub">レスポンシブ対応済み。スマホでプレビューして確認できるので安心して公開できる。</div>
-          </div>
+          <div><strong>PC・スマホどちらも美しく表示</strong></div>
         </div>
       </div>
 
-      <!-- 右：ビジュアル -->
-      <div class="visual-panel">
-        <div class="visual-panel__title">ページビルダー構成イメージ</div>
-        <div class="pb-block">🖼️ ヘッダー画像ブロック</div>
-        <div class="pb-block">✏️ テキスト・見出しブロック</div>
-        <div class="pb-block">💬 お客様の声ブロック</div>
-        <div class="pb-block">❓ よくある質問ブロック</div>
-        <div class="pb-block pb-block--cta">🛒 申込・決済ボタン（MOSH連携）</div>
+      <!-- 右：ブラウザモック -->
+      <div class="visual-panel" style="padding:0; overflow:hidden; background:transparent; border:none; box-shadow:none;">
+        <div class="browser-mock">
+          <div class="browser-mock__bar">
+            <div class="browser-mock__dots">
+              <div class="browser-mock__dot"></div>
+              <div class="browser-mock__dot"></div>
+              <div class="browser-mock__dot"></div>
+            </div>
+            <div class="browser-mock__url">mosh.jp/lp/あなたのサービス</div>
+          </div>
+          <div class="browser-mock__body">
+            <div class="pb-block">🖼️ ヘッダー画像ブロック</div>
+            <div class="pb-block">✏️ テキスト・見出しブロック</div>
+            <div class="pb-block">💬 お客様の声ブロック</div>
+            <div class="pb-block pb-block--cta">🛒 申込・決済ボタン（MOSH連携）</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -818,21 +896,21 @@
             <div class="how-step__num">1</div>
             <div class="how-step__body">
               <div class="how-step__title">ランディングページ管理を開く</div>
-              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/landing-pages</span> にアクセス</div>
+              <div class="how-step__desc"><span class="url-tag">mosh.jp/creator/landing-pages</span></div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">2</div>
             <div class="how-step__body">
               <div class="how-step__title">ブロックを追加・テキストや画像を入れ替え</div>
-              <div class="how-step__desc">クリックして直接編集できる。見出し・画像・お客様の声など必要なブロックを自由に並べる</div>
+              <div class="how-step__desc">クリックして直接編集。ブロックをドラッグで並べ替え</div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">3</div>
             <div class="how-step__body">
               <div class="how-step__title">申込ボタンを設定して公開</div>
-              <div class="how-step__desc">MOSHのサービスをボタンに紐付けて「公開する」をクリックするだけ。URLをシェアすれば完了</div>
+              <div class="how-step__desc">MOSHサービスをボタンに紐付けて「公開」するだけ</div>
             </div>
           </div>
         </div>
@@ -844,15 +922,15 @@
         <div class="usecase-cards">
           <div class="usecase-card">
             <div class="usecase-card__role">📣 イベント・セミナー開催者</div>
-            <div class="usecase-card__text">体験会や講座の集客LPをサクっと作れる。デザイナー・エンジニアへの外注コストが不要に。</div>
+            <div class="usecase-card__text">集客LPをすぐ作れる。デザイナー外注コストが不要になる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">🔄 継続サービス提供者</div>
-            <div class="usecase-card__text">会員サイトの案内ページや新規募集ページを自分で更新できるので、都度依頼する手間がなくなる。</div>
+            <div class="usecase-card__text">募集ページを自分で更新できるので都度依頼の手間がなくなる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">🌱 MOSHをはじめたばかりの方</div>
-            <div class="usecase-card__text">テンプレートがあるので何も知らなくてもすぐ作れる。まずはシンプルなページから始めてみよう。</div>
+            <div class="usecase-card__text">テンプレートがあるのですぐ作れる。まずシンプルなページから</div>
           </div>
         </div>
       </div>
@@ -879,11 +957,11 @@
     <div class="before-after">
       <div class="ba-item ba-item--before">
         <div class="ba-item__label">😓 今まで</div>
-        申込のたびにお礼メール・リマインド・フォローを手動で送っていた。対応漏れも起きやすい
+        申込のたびにお礼・リマインド・フォローを手動で送っていた
       </div>
       <div class="ba-item ba-item--after">
         <div class="ba-item__label">✅ これから</div>
-        一度設定すれば、申込〜フォローアップまで全自動。手作業ゼロで対応品質が統一できる
+        一度設定すれば申込〜フォローまで全自動。手作業ゼロ
       </div>
     </div>
 
@@ -893,37 +971,28 @@
         <span class="sub-label">できること</span>
         <div class="check-row">
           <span class="check-icon">📧</span>
-          <div>
-            <strong>購入お礼・参加案内メールを自動送信</strong>
-            <div class="check-sub">購入・申込完了と同時にお礼や参加方法の案内メールを自動で送信。手作業ゼロで対応品質を統一できる。</div>
-          </div>
+          <div><strong>購入お礼・参加案内メールを自動送信</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">⏰</span>
-          <div>
-            <strong>タイミング指定でリマインドを自動送信</strong>
-            <div class="check-sub">「3日前にリマインド」「当日朝に送る」「翌日にフォローする」など、曜日・時間・経過日数で送信タイミングを設定。</div>
-          </div>
+          <div><strong>タイミング指定でリマインドを自動送信</strong></div>
         </div>
         <div class="check-row">
           <span class="check-icon">🔀</span>
-          <div>
-            <strong>条件分岐で顧客ごとに最適な対応を実現</strong>
-            <div class="check-sub">「初回購入者だけ特典を送る」「未参加者に再案内する」など、条件によってアクションを自動で切り替え。</div>
-          </div>
+          <div><strong>条件分岐で顧客ごとに最適な対応を実現</strong></div>
         </div>
       </div>
 
-      <!-- 右：ビジュアル -->
+      <!-- 右：ワークフロービジュアル（色分け強化）-->
       <div class="visual-panel">
-        <div class="visual-panel__title">ワークフロー例：申込後の自動フロー</div>
+        <div class="visual-panel__title">申込後の自動フロー 例</div>
         <div class="wf-node wf-node--trigger">📋 申込完了（トリガー）</div>
         <div class="wf-arrow-down">↓<span>即座に</span></div>
-        <div class="wf-node">📧 お礼メール＋参加方法を自動送信</div>
+        <div class="wf-node wf-node--action">📧 お礼メール＋参加方法を自動送信</div>
         <div class="wf-arrow-down">↓<span>3日前に</span></div>
-        <div class="wf-node">⏰ リマインドメールを自動送信</div>
+        <div class="wf-node wf-node--action">⏰ リマインドメールを自動送信</div>
         <div class="wf-arrow-down">↓<span>翌日に</span></div>
-        <div class="wf-node">🎉 感想ヒアリング・次回案内を自動送信</div>
+        <div class="wf-node wf-node--follow">🎉 感想ヒアリング・次回案内を自動送信</div>
       </div>
     </div>
 
@@ -953,21 +1022,21 @@
             <div class="how-step__num">1</div>
             <div class="how-step__body">
               <div class="how-step__title">シナリオ管理を開く</div>
-              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/scenarios</span> にアクセス</div>
+              <div class="how-step__desc"><span class="url-tag">mosh.jp/creator/scenarios</span></div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">2</div>
             <div class="how-step__body">
-              <div class="how-step__title">トリガー（申込・購入など）と送信タイミングを設定</div>
-              <div class="how-step__desc">「何をきっかけに」「何日後に」「誰に」送るかを設定するだけ。難しい知識は不要</div>
+              <div class="how-step__title">トリガーと送信タイミングを設定</div>
+              <div class="how-step__desc">「何をきっかけに」「何日後に」「誰に」を設定するだけ</div>
             </div>
           </div>
           <div class="how-step">
             <div class="how-step__num">3</div>
             <div class="how-step__body">
               <div class="how-step__title">メール本文を作成して「有効化」するだけ</div>
-              <div class="how-step__desc">AI Studioと組み合わせればメール文章もAI生成可能。一度設定すれば自動で動き続ける</div>
+              <div class="how-step__desc">AI Studioで文章も自動生成。一度設定すれば自動で動き続ける</div>
             </div>
           </div>
         </div>
@@ -979,15 +1048,15 @@
         <div class="usecase-cards">
           <div class="usecase-card">
             <div class="usecase-card__role">😓 申込対応に追われている方</div>
-            <div class="usecase-card__text">お礼メール・日程連絡・リマインドを毎回手動で送っていた方。自動化で本業に集中できる時間を取り戻せる。</div>
+            <div class="usecase-card__text">お礼・リマインド・フォローを自動化して本業に集中できる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">🔁 リピーターを増やしたい方</div>
-            <div class="usecase-card__text">受講後のフォローアップや次回案内を自動化することで、顧客満足度を高めてリピート率を改善できる。</div>
+            <div class="usecase-card__text">フォローアップを自動化して顧客満足とリピート率を高められる</div>
           </div>
           <div class="usecase-card">
             <div class="usecase-card__role">📐 複数サービスを運営している方</div>
-            <div class="usecase-card__text">サービスごとに異なるフローを設定できるので、規模が大きくなってもオペレーションを統一管理できる。</div>
+            <div class="usecase-card__text">サービスごとに異なるフローを設定して一元管理できる</div>
           </div>
         </div>
       </div>
