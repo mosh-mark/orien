@@ -1889,9 +1889,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* 背景画像の荒さ対策：fixed はモバイルで正しく動作しないため scroll に変更 */
+  /* 背景画像の荒さ対策：スケーリングせず等倍で中央切り抜き表示 */
   html {
     background-attachment: scroll;
+    background-size: auto;        /* 拡縮なし → 劣化なし */
+    background-position: center center;
   }
 
   /* 上部バー表示 */
