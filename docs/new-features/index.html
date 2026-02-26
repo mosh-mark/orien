@@ -15,7 +15,7 @@
       display: flex;
       align-items: center;
       gap: 0.85rem;
-      margin-bottom: clamp(0.75rem, 1.4vh, 1.4rem);
+      margin-bottom: clamp(0.5rem, 1vh, 0.9rem);
     }
     .feature-num {
       width: 2.6rem; height: 2.6rem;
@@ -39,7 +39,131 @@
       margin-top: 0.25rem;
     }
 
-    /* 2カラムレイアウト */
+    /* ── Before/After ─────────────────── */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: clamp(0.55rem, 1vh, 0.9rem);
+    }
+    @media (max-width: 600px) {
+      .before-after { grid-template-columns: 1fr; }
+    }
+    .ba-item {
+      border-radius: 10px;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .ba-item__label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .ba-item--before {
+      background: rgba(120,120,130,0.08);
+      border: 1px solid rgba(120,120,130,0.2);
+      color: var(--warm-600);
+    }
+    .ba-item--before .ba-item__label { color: var(--warm-500); }
+    .ba-item--after {
+      background: rgba(250,110,120,0.07);
+      border: 1px solid rgba(250,110,120,0.3);
+      color: var(--warm-700);
+      font-weight: 600;
+    }
+    .ba-item--after .ba-item__label { color: var(--brand); }
+
+    /* ── 4機能フロー ───────────────────── */
+    .feature-flow {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      max-width: 700px;
+      margin: clamp(0.8rem,1.5vh,1.4rem) auto 0;
+    }
+    .feature-flow__box {
+      flex: 1;
+      background: var(--glass-bg);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 14px;
+      padding: clamp(0.75rem,1.3vh,1rem) 0.7rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--glass-shadow);
+    }
+    .feature-flow__icon { font-size: clamp(1.3rem,2.2vh,1.7rem); margin-bottom: 0.25rem; }
+    .feature-flow__name {
+      font-size: clamp(0.78rem,1.2vh,0.88rem);
+      font-weight: 800;
+      color: var(--warm-800);
+      line-height: 1.3;
+    }
+    .feature-flow__role {
+      display: inline-block;
+      font-size: 0.62rem; font-weight: 700;
+      background: var(--brand); color: #fff;
+      border-radius: 20px; padding: 0.12rem 0.55rem;
+      margin: 0.3rem 0 0.2rem;
+    }
+    .feature-flow__prev {
+      font-size: 0.65rem;
+      color: var(--warm-400);
+      text-decoration: line-through;
+      margin-bottom: 0.15rem;
+    }
+    .feature-flow__desc {
+      font-size: 0.7rem;
+      color: var(--warm-600);
+      line-height: 1.4;
+    }
+    .feature-flow__arrow {
+      font-size: 1.1rem; color: var(--brand);
+      font-weight: 700; flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .feature-flow { flex-wrap: wrap; gap: 0.5rem; }
+      .feature-flow__box { flex: calc(50% - 0.3rem); min-width: calc(50% - 0.3rem); }
+      .feature-flow__arrow { display: none; }
+    }
+
+    /* ── 無料バッジ ───────────────────── */
+    .free-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, #fa6e78 0%, #ff9a6c 100%);
+      color: #fff;
+      font-weight: 800;
+      font-size: clamp(0.78rem, 1.2vh, 0.9rem);
+      border-radius: 30px;
+      padding: 0.35rem 1.1rem;
+      box-shadow: 0 3px 14px rgba(250,110,120,0.45);
+      letter-spacing: 0.02em;
+    }
+    .free-callout {
+      background: rgba(250,110,120,0.09);
+      border: 2px solid rgba(250,110,120,0.38);
+      border-radius: 16px;
+      padding: clamp(0.9rem,1.6vh,1.4rem) 1.6rem;
+      max-width: 480px;
+      margin: clamp(1rem,2vh,1.8rem) auto;
+      text-align: center;
+    }
+    .free-callout__title {
+      font-size: clamp(1rem,1.8vh,1.35rem);
+      font-weight: 900;
+      color: var(--brand);
+      margin-bottom: 0.45rem;
+    }
+    .free-callout__body {
+      font-size: 0.88rem;
+      color: var(--warm-700);
+      line-height: 1.65;
+    }
+
+    /* ── 2カラムレイアウト ─────────────── */
     .feature-2col {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -95,6 +219,16 @@
     }
     .how-step__title { font-size: 0.92rem; font-weight: 700; color: var(--warm-800); }
     .how-step__desc  { font-size: 0.78rem; color: var(--warm-600); margin-top: 0.15rem; line-height: 1.45; }
+    .url-tag {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.72rem;
+      background: rgba(250,110,120,0.1);
+      color: var(--brand);
+      border-radius: 5px;
+      padding: 0.05rem 0.35rem;
+      margin-top: 0.15rem;
+    }
 
     /* 活用シーンカード */
     .usecase-cards { display: flex; flex-direction: column; gap: clamp(0.3rem, 0.6vh, 0.5rem); }
@@ -203,6 +337,9 @@
       </h1>
       <p class="hero__caption">〜 最新アップデートをご紹介します 〜</p>
       <p class="hero__catch">プロフィールリンク・AI Studio<br>ページビルダー・ワークフロー</p>
+      <div style="margin-top: 1rem;">
+        <span class="free-badge">🎉 ただいま無料提供中（〜9月末予定）</span>
+      </div>
     </div>
   </div>
 </header>
@@ -241,13 +378,64 @@
         <div class="step-card__desc">販売〜フォローアップをまるごと自動化</div>
       </div>
     </div>
+
+    <p style="text-align:center; font-size:0.82rem; color:var(--warm-500); margin-top:clamp(0.6rem,1.2vh,1rem);">
+      ※ 現在ご登録の方は <strong style="color:var(--brand);">9月末まで無料</strong>でご利用いただける予定です
+    </p>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 3 — プロフィールリンク①（概要）
+     スライド 3 — 4機能のつながり
 ══════════════════════════════════════════ -->
 <section class="section section--gray">
+  <div class="section__inner">
+    <span class="tag tag--dark">全体像</span>
+    <h2 class="section-title">4機能で、ビジネスの全フェーズをカバー</h2>
+    <p style="text-align:center; font-size:clamp(0.85rem,1.3vh,0.95rem); color:var(--warm-600); margin: -0.3rem 0 0;">
+      バラバラのツールが必要だった作業が、MOSHひとつで完結します
+    </p>
+
+    <div class="feature-flow">
+      <div class="feature-flow__box">
+        <div class="feature-flow__icon">🔗</div>
+        <div class="feature-flow__name">プロフィール<br>リンク</div>
+        <div class="feature-flow__role">集客</div>
+        <div class="feature-flow__prev">外部リンクツール</div>
+        <div class="feature-flow__desc">SNSから<br>ページへ誘導</div>
+      </div>
+      <div class="feature-flow__arrow">→</div>
+      <div class="feature-flow__box">
+        <div class="feature-flow__icon">🤖</div>
+        <div class="feature-flow__name">AI Studio</div>
+        <div class="feature-flow__role">制作</div>
+        <div class="feature-flow__prev">AI文章ツール</div>
+        <div class="feature-flow__desc">文章・コンテンツを<br>AI生成</div>
+      </div>
+      <div class="feature-flow__arrow">→</div>
+      <div class="feature-flow__box">
+        <div class="feature-flow__icon">🎨</div>
+        <div class="feature-flow__name">ページ<br>ビルダー</div>
+        <div class="feature-flow__role">訴求</div>
+        <div class="feature-flow__prev">LP制作ツール</div>
+        <div class="feature-flow__desc">魅力的なLPで<br>成約を高める</div>
+      </div>
+      <div class="feature-flow__arrow">→</div>
+      <div class="feature-flow__box">
+        <div class="feature-flow__icon">⚡</div>
+        <div class="feature-flow__name">ワークフロー</div>
+        <div class="feature-flow__role">自動化</div>
+        <div class="feature-flow__prev">メール配信ツール</div>
+        <div class="feature-flow__desc">購入後の<br>フォロー自動化</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     スライド 4 — プロフィールリンク①（概要）
+══════════════════════════════════════════ -->
+<section class="section section--light">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -255,6 +443,18 @@
       <div>
         <div class="feature-name">🔗 プロフィールリンク</div>
         <div class="feature-sub">ひとつのURLで、あなたのすべてを届ける</div>
+      </div>
+    </div>
+
+    <!-- Before / After -->
+    <div class="before-after">
+      <div class="ba-item ba-item--before">
+        <div class="ba-item__label">😓 今まで</div>
+        SNSに貼れるリンクが1つだけで、複数のサービスを同時に案内できない
+      </div>
+      <div class="ba-item ba-item--after">
+        <div class="ba-item__label">✅ これから</div>
+        1つのURLで全サービスを一覧表示。どのサービスへのアクセスが多いか把握もできる
       </div>
     </div>
 
@@ -304,9 +504,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 4 — プロフィールリンク②（使い方・活用シーン）
+     スライド 5 — プロフィールリンク②（使い方・活用シーン）
 ══════════════════════════════════════════ -->
-<section class="section section--light">
+<section class="section section--gray">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -325,8 +525,8 @@
           <div class="how-step">
             <div class="how-step__num">1</div>
             <div class="how-step__body">
-              <div class="how-step__title">ダッシュボード → プロフィール → リンクページ編集</div>
-              <div class="how-step__desc">左メニューの「プロフィール」からページ編集画面へ進む</div>
+              <div class="how-step__title">プロフィールページを開く</div>
+              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/profile</span> にアクセス</div>
             </div>
           </div>
           <div class="how-step">
@@ -370,9 +570,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 5 — AI Studio①（概要）
+     スライド 6 — AI Studio①（概要）
 ══════════════════════════════════════════ -->
-<section class="section section--gray">
+<section class="section section--light">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -380,6 +580,18 @@
       <div>
         <div class="feature-name">🤖 AI Studio</div>
         <div class="feature-sub">AIがコンテンツ制作・セールスをサポート</div>
+      </div>
+    </div>
+
+    <!-- Before / After -->
+    <div class="before-after">
+      <div class="ba-item ba-item--before">
+        <div class="ba-item__label">😓 今まで</div>
+        サービス説明を書くのに1〜2時間かかる。何を書けばいいか悩んでなかなか公開できない
+      </div>
+      <div class="ba-item ba-item--after">
+        <div class="ba-item__label">✅ これから</div>
+        キーワードを入れるだけで、魅力的な文章が数秒で完成。そのまま使うか少し直せばOK
       </div>
     </div>
 
@@ -430,9 +642,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 6 — AI Studio②（使い方・活用シーン）
+     スライド 7 — AI Studio②（使い方・活用シーン）
 ══════════════════════════════════════════ -->
-<section class="section section--light">
+<section class="section section--gray">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -451,8 +663,8 @@
           <div class="how-step">
             <div class="how-step__num">1</div>
             <div class="how-step__body">
-              <div class="how-step__title">サービス作成画面 →「AI生成」をクリック</div>
-              <div class="how-step__desc">サービスページの編集中に「AIで生成する」ボタンが表示されているのでクリック</div>
+              <div class="how-step__title">AI Studioを開く</div>
+              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/agent-chats</span> にアクセス</div>
             </div>
           </div>
           <div class="how-step">
@@ -496,9 +708,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 7 — ページビルダー①（概要）
+     スライド 8 — ページビルダー①（概要）
 ══════════════════════════════════════════ -->
-<section class="section section--gray">
+<section class="section section--light">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -506,6 +718,18 @@
       <div>
         <div class="feature-name">🎨 ページビルダー</div>
         <div class="feature-sub">ノーコードで、プロ品質のサービスページを</div>
+      </div>
+    </div>
+
+    <!-- Before / After -->
+    <div class="before-after">
+      <div class="ba-item ba-item--before">
+        <div class="ba-item__label">😓 今まで</div>
+        LPを作るには外注するか、別のツールを覚える必要があった。コストも時間もかかる
+      </div>
+      <div class="ba-item ba-item--after">
+        <div class="ba-item__label">✅ これから</div>
+        ノーコードで自分だけのページを作れる。MOSHの申込・決済もそのまま組み込める
       </div>
     </div>
 
@@ -551,9 +775,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 8 — ページビルダー②（使い方・活用シーン）
+     スライド 9 — ページビルダー②（使い方・活用シーン）
 ══════════════════════════════════════════ -->
-<section class="section section--light">
+<section class="section section--gray">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -572,8 +796,8 @@
           <div class="how-step">
             <div class="how-step__num">1</div>
             <div class="how-step__body">
-              <div class="how-step__title">マイページ → ページ編集 → 新規作成</div>
-              <div class="how-step__desc">テンプレート一覧から好みのデザインを選んでスタート</div>
+              <div class="how-step__title">ランディングページ管理を開く</div>
+              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/landing-pages</span> にアクセス</div>
             </div>
           </div>
           <div class="how-step">
@@ -606,7 +830,7 @@
             <div class="usecase-card__text">会員サイトの案内ページや新規募集ページを自分で更新できるので、都度依頼する手間がなくなる。</div>
           </div>
           <div class="usecase-card">
-            <div class="usecase-card__role">🌱 MOSH をはじめたばかりの方</div>
+            <div class="usecase-card__role">🌱 MOSHをはじめたばかりの方</div>
             <div class="usecase-card__text">テンプレートがあるので何も知らなくてもすぐ作れる。まずはシンプルなページから始めてみよう。</div>
           </div>
         </div>
@@ -617,9 +841,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 9 — ワークフロー①（概要）
+     スライド 10 — ワークフロー①（概要）
 ══════════════════════════════════════════ -->
-<section class="section section--gray">
+<section class="section section--light">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -627,6 +851,18 @@
       <div>
         <div class="feature-name">⚡ ワークフロー</div>
         <div class="feature-sub">売れる仕組みを、一度つくったら自動で動く</div>
+      </div>
+    </div>
+
+    <!-- Before / After -->
+    <div class="before-after">
+      <div class="ba-item ba-item--before">
+        <div class="ba-item__label">😓 今まで</div>
+        申込のたびにお礼メール・リマインド・フォローを手動で送っていた。対応漏れも起きやすい
+      </div>
+      <div class="ba-item ba-item--after">
+        <div class="ba-item__label">✅ これから</div>
+        一度設定すれば、申込〜フォローアップまで全自動。手作業ゼロで対応品質が統一できる
       </div>
     </div>
 
@@ -674,9 +910,9 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 10 — ワークフロー②（使い方・活用シーン）
+     スライド 11 — ワークフロー②（使い方・活用シーン）
 ══════════════════════════════════════════ -->
-<section class="section section--light">
+<section class="section section--gray">
   <div class="section__inner">
 
     <div class="feature-header">
@@ -695,8 +931,8 @@
           <div class="how-step">
             <div class="how-step__num">1</div>
             <div class="how-step__body">
-              <div class="how-step__title">自動化 → ワークフロー → 新規作成</div>
-              <div class="how-step__desc">ダッシュボードの「自動化」メニューから新しいワークフローを作成</div>
+              <div class="how-step__title">シナリオ管理を開く</div>
+              <div class="how-step__desc">ブラウザで <span class="url-tag">mosh.jp/creator/scenarios</span> にアクセス</div>
             </div>
           </div>
           <div class="how-step">
@@ -740,7 +976,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     スライド 11 — クロージング
+     スライド 12 — クロージング
 ══════════════════════════════════════════ -->
 <section class="section section--dark">
   <div class="section__inner" style="text-align:center;">
@@ -748,31 +984,36 @@
     <h2 class="section-title" style="color:#fff; font-size:clamp(1.6rem, 3vh, 2.8rem);">
       今すぐ新機能を試してみましょう
     </h2>
-    <p style="color:rgba(255,255,255,0.85); margin-bottom:clamp(1.2rem, 2.5vh, 2rem); font-size:1rem;">
-      すべての機能はMOSHのダッシュボードからすぐに利用できます。<br>
-      まずは1つ、今日から使ってみてください。
-    </p>
+
+    <!-- 無料期間コールアウト -->
+    <div class="free-callout">
+      <div class="free-callout__title">🎉 ただいま無料でご利用いただけます</div>
+      <div class="free-callout__body">
+        現在ご登録の方は <strong>9月末まで無料</strong>でご利用いただける予定です。<br>
+        まずは1つ、今日から使ってみてください。
+      </div>
+    </div>
 
     <div class="grid-2" style="max-width:520px; margin: 0 auto clamp(1.2rem, 2.5vh, 2rem);">
       <div class="step-card" style="background:rgba(255,255,255,0.13); border-color:rgba(255,255,255,0.28);">
         <div class="step-card__icon">🔗</div>
         <div class="step-card__title" style="color:#fff;">プロフィールリンク</div>
-        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">プロフィール → リンクページ編集</div>
+        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">mosh.jp/creator/profile</div>
       </div>
       <div class="step-card" style="background:rgba(255,255,255,0.13); border-color:rgba(255,255,255,0.28);">
         <div class="step-card__icon">🤖</div>
         <div class="step-card__title" style="color:#fff;">AI Studio</div>
-        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">サービス作成 → AI生成</div>
+        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">mosh.jp/creator/agent-chats</div>
       </div>
       <div class="step-card" style="background:rgba(255,255,255,0.13); border-color:rgba(255,255,255,0.28);">
         <div class="step-card__icon">🎨</div>
         <div class="step-card__title" style="color:#fff;">ページビルダー</div>
-        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">マイページ → ページ編集</div>
+        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">mosh.jp/creator/landing-pages</div>
       </div>
       <div class="step-card" style="background:rgba(255,255,255,0.13); border-color:rgba(255,255,255,0.28);">
         <div class="step-card__icon">⚡</div>
         <div class="step-card__title" style="color:#fff;">ワークフロー</div>
-        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">自動化 → ワークフロー</div>
+        <div class="step-card__desc" style="color:rgba(255,255,255,0.7);">mosh.jp/creator/scenarios</div>
       </div>
     </div>
 

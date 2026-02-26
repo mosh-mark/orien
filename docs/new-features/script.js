@@ -99,6 +99,7 @@ document.addEventListener('touchend', e => {
 const SLIDE_CONFIG = [
   { label: 'TOP',                     major: true  },
   { label: '今日の流れ',              major: true  },
+  { label: '4機能のつながり',         major: true  },
   { label: '① プロフィールリンク',   major: true  },
   { label: '　└ 使い方・活用シーン', major: false },
   { label: '② AI Studio',            major: true  },
