@@ -1889,6 +1889,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* 背景画像の荒さ対策：fixed はモバイルで正しく動作しないため scroll に変更 */
+  html {
+    background-attachment: scroll;
+  }
+
   /* 上部バー表示 */
   .top-progress-bar {
     display: block;
