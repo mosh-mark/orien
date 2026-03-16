@@ -1366,7 +1366,7 @@ body {
 
 .case-card-full__img-wrap {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   background: var(--warm-100);
   overflow: hidden;
   flex-shrink: 0;
@@ -1377,7 +1377,7 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
 }
 
 .case-card-full__body {
